@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>costEstimatr - Simple jQuery Cost Estimation Plugin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" media="screen" href="css/style.css" />
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="js/jquery.costEstimatr.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+                $('#priceQuote').costEstimatr();
+            });
+        </script>
+    </head>
+    <body>
+        <p class="back"><a href="http://www.tonybebber.com/costestimatr-jquery-plugin">&laquo; Back to plugin details</a></p>
+        <div id="formContainer">
+            <form id="priceQuote" action="" method="post">
+                <h1><span>costEstimatr</span>Simple jQuery Cost Estimation Plugin</h1>
+                <div id="intro" class="sectionWrap">
+                    <h2>Get Started Now!</h2>
+                    <p>Please fill out this form with as much information about your project as possible. As you select your project requirements you will see your order summary at the bottom of this form update automatically. Note: There will be no payment processed through this form; this is just an estimate.</p>
+                    <p>This form is not real and will not submit anywhere...it is just a demo.</p>
+                </div>
+                <div id="personalDetails" class="sectionWrap">
+                    <h4>Personal Details</h4>
+                    <p>Who are you and how can I contact you?</p>
+                    <div class="formText">
+                        <label for="name">Name:</label><input type="text" name="name" value="" id="name"><br />
+                    </div>
+                    <div class="formText right">
+                        <label for="email">Email:</label><input type="text" name="email" value="" id="email"><br />
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="designDetails" class="sectionWrap">
+                    <h4>Essential Project Details (Design)</h4>
+                    <p>How many mockups would you like me to create?</p>
+                    <select name="designs" id="designs">
+                        <option value="0">Choose Design Options</option>
+                        <option value="100">1 Design - $100</option>
+                        <option value="175">2 Designs - $175</option>
+                        <option value="225">3 Designs - $225</option>
+                    </select>
+                    <p>Are there any other design services that I can provide for you?</p>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="logoDesign" value="150" id="logoDesign"><label for="logoDesign">Logo Design <span>$150</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="businessCards" value="100" id="businessCards"><label for="businessCards">Business Cards <span>$100</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="brochure" value="200" id="brochure"><label for="brochure">Brochure <span>$200</span></label>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="developmentDetails" class="sectionWrap">
+                    <h4>Essential Project Details (Development)</h4>
+                    <p>How many HTML pages do you need me to code for you? (Style sheet included)</p>
+                    <select name="pages" id="pages">
+                        <option value="0">Choose Number of Pages</option>
+                        <option value="200">1 Page - $200</option>
+                        <option value="250">2-5 Pages - $250</option>
+                        <option value="300">5-10 Pages - $300</option>
+                        <option value="400">10+ Pages - $400</option>
+                    </select>
+                    <p>Are there any other development services that I can provide for you?</p>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="customContact" value="225" id="customContact"><label for="customContact">Contact Form <span>$225</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="photoGallery" value="250" id="photoGallery"><label for="photoGallery">Photo Gallery <span>$250</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="responsive" value="150" id="responsive"><label for="responsive">Responsive Design <span>$150</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="hosting" value="99" id="hosting"><label for="hosting">Web Hosting <span>$99</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="checkbox" name="domain" value="15" id="domain"><label for="domain">Domain Name <span>$10</span></label>
+                    </div>
+                    <div class="clear"></div>
+                    <p>Would you like a Content Mangement System?</p>
+                    <div class="rdioChk">
+                        <input type="radio" name="cms" value="0" id="nothanks"><label for="nothanks">No Thanks <span>$0</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="radio" name="cms" value="250" id="wordpress"><label for="wordpress">Wordpress <span>$250</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="radio" name="cms" value="350" id="expressionEngine"><label for="expressionEngine">Expression Engine <span>$350</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="radio" name="cms" value="450" id="joomla"><label for="joomla">Joomla! <span>$450</span></label>
+                    </div>
+                    <div class="rdioChk">
+                        <input type="radio" name="cms" value="550" id="drupal"><label for="drupal">Drupal <span>$550</span></label>
+                    </div>
+                </div>
+                <div id="additionalDetails" class="sectionWrap">
+                    <h4>Additional Project Details</h4>
+                    <p>Please provide me with a little more information so I can get started right away!</p>
+                    <textarea id="moreInfo" name="moreInfo" rows="8" cols="40"></textarea>
+                </div>
+                <h4>Your Order Summary</h4>
+                <div id="costETAWrap">
+                    <div id="costETA">
+                        <p>Estimated Total Price: $<span id="price">0.00</span></p>
+                        <p>Estimated Delivery Time: <span id="days">0</span> Days</p>
+                    </div>
+                </div>
+                <p><input type="submit" value="Submit Project Requirements &raquo;"></p>
+                <div class="clear"></div>
+            </form>
+        </div>
+    </body>
+</html>
